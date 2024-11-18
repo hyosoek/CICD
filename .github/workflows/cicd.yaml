@@ -46,6 +46,9 @@ jobs:
       #이미지 업로드
       - name: build and release
         run: |
-          docker build -t ${{ secrets.DOCKERHUB_REPOSITORY }} .
-          docker tag ${{ secrets.DOCKERHUB_REPOSITORY }}:latest ${{ secrets.DOCKERHUB_USERNAME }}/${{ secrets.DOCKERHUB_REPOSITORY }}:latest
+          # Docker 이미지 빌드
+          docker build -t ${{ secrets.DOCKERHUB_USERNAME }}/${{ secrets.DOCKERHUB_REPOSITORY }}:latest .
+          
+          # Docker 이미지 푸시
           docker push ${{ secrets.DOCKERHUB_USERNAME }}/${{ secrets.DOCKERHUB_REPOSITORY }}:latest
+     
