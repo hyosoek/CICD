@@ -31,7 +31,7 @@ jobs:
       - name: AWS Credentials
         uses: aws-actions/configure-aws-credentials@v4
         with:
-          role-to-assume: arn:aws:iam::381492314104:role/private_image_push
+          role-to-assume: arn:aws:iam::381492314104:role/apiserverrole
           role-session-name: sampleSessionName
           aws-region: ap-northeast-2
 
